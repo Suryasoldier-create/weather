@@ -1,0 +1,65 @@
+/* Global styling and custom utilities */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+#weather-app {
+    max-width: 600px;
+}
+
+/* Custom styles for the navigation tabs to match Google's underline style */
+#nav-tabs .tab {
+    position: relative;
+    color: #6b7280; /* text-gray-600 */
+    transition: color 0.15s ease;
+    padding-bottom: 15px; /* Add extra padding below the text for the underline */
+}
+
+#nav-tabs .tab.active {
+    color: #1f2937; /* text-gray-900 */
+}
+
+#nav-tabs .tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px; /* Position the underline exactly at the border */
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-color: #1a73e8; /* Google Blue accent color */
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+}
+
+/* Style for the hourly forecast scroll container (Hides the scrollbar) */
+.custom-scroll {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+.custom-scroll::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+/* Style for the individual daily forecast boxes */
+.daily-box {
+    padding: 1rem 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.15s;
+    border-right: 1px solid #e5e7eb; /* Subtle dividers */
+    /* Ensure the daily boxes occupy 1/7th of the grid width */
+    width: 100%;
+    min-width: 80px; 
+}
+
+.daily-box:last-child {
+    border-right: none;
+}
+
+/* Style for the selected day in the 7-day forecast (Today) */
+.daily-box.selected {
+    background-color: #ebf5ff; /* Light blue background */
+    font-weight: 600; /* semi-bold */
+}
